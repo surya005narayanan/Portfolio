@@ -522,14 +522,14 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 /* ═══════════════════ ACHIEVEMENTS ═══════════════════ */
 .achieve-bento{
   display:grid;
-  grid-template-columns:repeat(6,1fr);
+  grid-template-columns:repeat(6,minmax(0,1fr));
   gap:1.25rem;
 }
 .achieve-large {grid-column:span 4}
 .achieve-medium{grid-column:span 2}
 .achieve-small {grid-column:span 3}
 
-.achieve-card{padding:2rem;position:relative;overflow:hidden}
+.achieve-card{padding:2rem;position:relative;overflow:hidden;min-width:0}
 .achieve-icon{font-size:2.5rem;margin-bottom:0.75rem}
 .achieve-badge{
   display:inline-block;padding:0.25rem 0.75rem;border-radius:2rem;
@@ -572,8 +572,9 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   .projects-bento{grid-template-columns:1fr}
   .bento-featured,.bento-half,.bento-third{grid-column:span 1}
   .footer-inner{flex-direction:column;text-align:center}
-  .achieve-bento{grid-template-columns:1fr}
-  .achieve-large,.achieve-medium,.achieve-small{grid-column:span 1}
+  .achieve-bento{grid-template-columns:1fr!important}
+  .achieve-large,.achieve-medium,.achieve-small{grid-column:1/-1!important}
+  .achieve-card{padding:1.5rem}
   .skill-icon-grid{grid-template-columns:repeat(2,1fr)}
   .skill-icon-grid-5{grid-template-columns:repeat(3,1fr)}
 }
@@ -584,6 +585,8 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
   .stat-divider{display:none}
   .bento-small{grid-column:span 1}
   .bento-third{grid-column:span 1}
-  .achieve-small{grid-column:span 1}
+  .achieve-bento{grid-template-columns:1fr!important}
+  .achieve-large,.achieve-medium,.achieve-small{grid-column:1/-1!important}
+  .achieve-card{padding:1.25rem}
   .skill-icon-grid{grid-template-columns:repeat(2,1fr)}
 }
