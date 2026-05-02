@@ -10,12 +10,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;600;700;800;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300..900&family=Outfit:wght@300..900&family=Space+Grotesk:wght@300..700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <!-- ══════════ COSMIC BACKGROUND (FULL-PAGE) ══════════ -->
+  <canvas id="cosmos-canvas"></canvas>
+  <div class="nebula-cloud nebula-1"></div>
+  <div class="nebula-cloud nebula-2"></div>
+  <div class="nebula-cloud nebula-3"></div>
+
+  <!-- ══════════ SCROLL PROGRESS ══════════ -->
+  <div class="scroll-progress-bar" id="scroll-progress"></div>
 
   <!-- ══════════ NAVBAR ══════════ -->
   <nav class="navbar" id="navbar">
@@ -28,6 +36,7 @@
         <li><a href="#skills" class="nav-link">Skills</a></li>
         <li><a href="#experience" class="nav-link">Experience</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#competitions" class="nav-link">Events</a></li>
         <li><a href="#achievements" class="nav-link">Achievements</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
@@ -41,7 +50,15 @@
   <!-- ══════════ HERO ══════════ -->
   <section class="hero" id="hero">
     <div class="hero-bg-overlay"></div>
+    <div class="mesh-gradient">
+      <div class="mesh-blob mesh-purple"></div>
+      <div class="mesh-blob mesh-amber"></div>
+    </div>
     <div class="hero-particles" id="hero-particles"></div>
+    <div class="celestial-sphere"></div>
+    <div class="parallax-shape shape-ring-1"></div>
+    <div class="parallax-shape shape-cube-1"></div>
+    <div class="parallax-shape shape-ring-2"></div>
     <div class="hero-container">
       <div class="hero-left">
         <div class="hero-badge">
@@ -50,18 +67,19 @@
         </div>
         <h1 class="hero-title">
           Hey, I'm<br />
-          <span class="gradient-text">M Surya</span><br />
+          <span class="metallic-gold-text">M Surya</span><br />
           Narayanan
         </h1>
         <p class="hero-sub">
-          AI Developer &amp; Full Stack Developer specializing in
+          <span id="typewriter-text"></span><span class="typewriter-cursor">|</span> specializing in
           <strong>RAG systems</strong>, <strong>AI Agents</strong>, and
-          <strong>Scalable Web Platforms</strong>.
+          <strong>Scalable Web Platforms</strong>.<br />
           I turn ambitious ideas into production-grade AI.
         </p>
         <div class="hero-cta">
-          <a href="#projects" class="btn-primary" id="btn-view-projects">🚀 View Projects</a>
-          <a href="Surya_Narayanan_Resume.pdf" download class="btn-ghost" id="btn-download-resume">📄 Download
+          <a href="#projects" class="btn-primary magnetic-btn" id="btn-view-projects">🚀 View Projects</a>
+          <a href="Surya_Narayanan_Resume.pdf" download class="btn-ghost magnetic-btn" id="btn-download-resume">📄
+            Download
             Resume</a>
         </div>
         <div class="hero-stats">
@@ -98,8 +116,10 @@
           </div>
         </div>
         <div class="floating-card card-python"><span class="fc-icon">🐍</span><span class="fc-text">Python</span></div>
-        <div class="floating-card card-llm"> <span class="fc-icon">🧠</span><span class="fc-text">LangChain</span></div>
-        <div class="floating-card card-ml"> <span class="fc-icon">⚡</span><span class="fc-text">LangGraph</span></div>
+        <div class="floating-card card-llm pulse-glow"> <span class="fc-icon">🧠</span><span
+            class="fc-text">LangChain</span></div>
+        <div class="floating-card card-ml pulse-glow"> <span class="fc-icon">⚡</span><span
+            class="fc-text">LangGraph</span></div>
       </div>
     </div>
     <div class="scroll-indicator" id="scroll-indicator">
@@ -450,12 +470,55 @@
     </div>
   </section>
 
+  <!-- ══════════ COMPETITIONS & EVENTS ══════════ -->
+  <section class="section section-alt" id="competitions">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Competitions &amp; Events</span>
+        <h2 class="section-title">Where I <span class="metallic-gold-text">Compete</span></h2>
+      </div>
+      <div class="achieve-bento">
+
+        <!-- Hackathon -->
+        <div class="achieve-card achieve-medium glass-card fade-up event-card">
+          <div class="event-img-wrapper">
+            <img src="Only_founders.png" alt="Founders Hackathon" class="event-img" />
+          </div>
+          <div class="achieve-badge achieve-badge-gold">Participant</div>
+          <h3 class="achieve-title">Only Founders Hackathon</h3>
+          <p class="achieve-desc">VIT 2026 — Competitor</p>
+        </div>
+
+        <!-- Ideathon -->
+        <div class="achieve-card achieve-medium glass-card fade-up event-card" data-delay="1">
+          <div class="event-img-wrapper">
+            <img src="M_Surya_Narayanan _Idea_Freaks.png" alt="Thamizhan Skills Ideathon" class="event-img" />
+          </div>
+          <div class="achieve-badge achieve-badge-cyan">Participant</div>
+          <h3 class="achieve-title">Thamizhan Skills Ideathon</h3>
+          <p class="achieve-desc">2026</p>
+        </div>
+
+        <!-- Organizer -->
+        <div class="achieve-card achieve-medium glass-card fade-up event-card" data-delay="2">
+          <div class="event-img-wrapper">
+            <img src="code_n_surge.jpeg" alt="Code N Surge" class="event-img" />
+          </div>
+          <div class="achieve-badge achieve-badge-purple">Event Organizer</div>
+          <h3 class="achieve-title">Code N Surge</h3>
+          <p class="achieve-desc">2024</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ══════════ ACHIEVEMENTS ══════════ -->
-  <section class="section section-alt" id="achievements">
+  <section class="section" id="achievements">
     <div class="container">
       <div class="section-header">
         <span class="section-label">Achievements &amp; Certifications</span>
-        <h2 class="section-title">Wins &amp; <span class="gradient-text">Credentials</span></h2>
+        <h2 class="section-title">Wins &amp; <span class="metallic-gold-text">Credentials</span></h2>
       </div>
       <div class="achieve-bento">
 
@@ -484,30 +547,50 @@
         </div>
 
         <!-- Star Summit Winner -->
-        <div class="achieve-card achieve-medium glass-card fade-up" id="achieve-summit" data-delay="1">
-          <div class="achieve-icon">🏆</div>
-          <div class="achieve-badge achieve-badge-gold">Winner × 2</div>
-          <h3 class="achieve-title">Star Summit 2024 &amp; 2025</h3>
-          <p class="achieve-desc">
-            Back-to-back winner at <strong>Star Summit</strong> — a national-level innovation challenge.
-            Two years running. Zero plans to stop. 🔥
-          </p>
+        <div class="achieve-card achieve-medium glass-card fade-up has-bg-image" id="achieve-summit" data-delay="1">
+          <div class="card-bg-img" style="background-image: url('Star_summit.jpeg');"></div>
+          <div class="card-bg-overlay"></div>
+          <div class="floating-trophy pulse-gold">🏆</div>
+          <div class="achieve-content-relative">
+            <div class="achieve-badge achieve-badge-gold">Winner × 2</div>
+            <h3 class="achieve-title">Star Summit 2024 &amp; 2025</h3>
+            <p class="achieve-desc">
+              Back-to-back winner at <strong>Star Summit</strong> — a national-level innovation challenge.
+              Two years running. Zero plans to stop. 🔥
+            </p>
+          </div>
         </div>
+      </div>
 
+      <div class="cert-grid">
         <!-- Oracle Cert -->
-        <div class="achieve-card achieve-small glass-card fade-up" id="achieve-oracle" data-delay="2">
-          <div class="achieve-icon">🗄️</div>
-          <div class="achieve-badge achieve-badge-cyan">Certified</div>
-          <h3 class="achieve-title">Oracle SQL Certified</h3>
-          <p class="achieve-desc">Oracle Database SQL certification — querying at scale, verified.</p>
+        <div class="cert-card glass-card fade-up" id="achieve-oracle" data-delay="2">
+          <div class="cert-img-wrapper">
+            <img src="Oracle .png" alt="Oracle SQL" class="cert-img" />
+            <div class="verified-badge">✨</div>
+          </div>
+          <h3 class="achieve-title">Oracle SQL</h3>
+          <p class="achieve-desc">Certified</p>
         </div>
 
         <!-- Salesforce Cert -->
-        <div class="achieve-card achieve-small glass-card fade-up" id="achieve-salesforce" data-delay="3">
-          <div class="achieve-icon">🤖</div>
-          <div class="achieve-badge achieve-badge-purple">Certified</div>
-          <h3 class="achieve-title">Salesforce Agentforce Specialist</h3>
-          <p class="achieve-desc">Salesforce-certified in AI agent design and enterprise automation.</p>
+        <div class="cert-card glass-card fade-up" id="achieve-salesforce" data-delay="3">
+          <div class="cert-img-wrapper">
+            <img src="Salesforce certification.jpg" alt="Salesforce Agentforce" class="cert-img" />
+            <div class="verified-badge">✨</div>
+          </div>
+          <h3 class="achieve-title">Salesforce Agentforce</h3>
+          <p class="achieve-desc">Specialist</p>
+        </div>
+
+        <!-- CCNA Cert -->
+        <div class="cert-card glass-card fade-up" id="achieve-ccna" data-delay="4">
+          <div class="cert-img-wrapper">
+            <img src="CCNA.png" alt="CCNA" class="cert-img" />
+            <div class="verified-badge">✨</div>
+          </div>
+          <h3 class="achieve-title">CCNA</h3>
+          <p class="achieve-desc">Certified</p>
         </div>
 
       </div>
